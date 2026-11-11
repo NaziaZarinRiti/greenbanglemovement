@@ -1,0 +1,22 @@
+# Cloudflare Pages settings: caching and security.
+# Cloudflare reads this file automatically. No need to edit it.
+
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=()
+
+# Photos, video and fonts rarely change: let browsers keep them for 30 days
+/img/*
+  Cache-Control: public, max-age=2592000
+/media/*
+  Cache-Control: public, max-age=2592000
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# CSS and JavaScript: keep for 1 hour so your edits show up quickly
+/css/*
+  Cache-Control: public, max-age=3600
+/js/*
+  Cache-Control: public, max-age=3600
